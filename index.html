@@ -1,12 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,height=device-heigt,initial-scale=1.0">
+  <title>iMPROVE YOUR MEMORY</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
+<header class="header">  
+    <h2 class="logo">Memory Game</h2>
+    <nav class="navigation">
+      <button class="AboutGame">About Game</button>
+      <a href="https://github.com/ssselery/onlyforbones" class="href">Code</a>
+      <a href="#" class="href">Images</a>
+      <a href="#" class="href">Contacts</a>
+      <a href="#" class="href">More</a>
+      <button class="btnLogin-popup">Login/Sign up</button>
+    </nav>
+</header>
+      
+
+<div class="wrapper">
+        <span class="close-icon"><ion-icon name="close"></ion-icon></span>
+        <div class="form-box Login">
+
+          <h2>Login</h2>
+          <form action="connect.php" method='post'>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="email" required name="Email">
+              <label>Email</label>
+          <form action="connect.php" method='post'>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="key"></ion-icon></span>
+              <input type="password" required name="Password">
+              <label>Password</label>
+            </div>
+            <div class="remember-forgot">
+              <div class="parent1"><div class="child1 child2"><input  class="galochka" type="checkbox" name="wannaremember" id=""></div><div class="child1">Remember me  </div><div class="child1 child3"><a href="#" class="href">Forgot password?</a></div>
+            </div>                       
+            </div>
+            <button type="submit" class="btn">Sumbit</button>
+            <div class="login-register"><p>Don`t have an account?<a href="#" class="register-link">Make It!</a></p></div>
+            </div>
+          </form>
+        </div>
+        
+        <div class="form-box Register">
+
+          <h2>Sign up</h2>
+          <form action="connect.php" method='post'>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="person-add"></ion-icon></span>
+              <input type="text" required name="Nickname">
+              <label>Username</label>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="mail"></ion-icon></span>
+              <input type="email" required name="RegEmail">
+              <label>Email</label>
+          <form action="connect.php" method='post'>
+            <div class="input-box">
+              <span class="icon"><ion-icon name="key"></ion-icon></span>
+              <input type="password" required name="RegPassword">
+              <label>Password</label>
+
+                          
+
+            </div>
+            <button type="submit" class="btn">Sumbit</button>
+            <div class="register-login"><p>Already have an account?<a href="#" class="login-link">Log in</a></p></div>
+            </div>
+          </form>
+        </div> 
+      </div>
+  
+
+
+
+
+
+
+
+      <script src="script.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
+
+  
+
+
 </body>
+
 </html>
