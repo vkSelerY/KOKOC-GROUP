@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личный кабинет</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Добро пожаловать, <span id="username">Гость</span>!</h1>
+    <button onclick="logout()">Выйти</button>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Проверяем наличие элемента 'username' в DOM
+            const usernameElement = document.getElementById('username');
+            if (!usernameElement) {
+                console.error("Элемент 'username' не найден на странице");
+                return;
+            }
+
+            const userId = localStorage.getItem('user_id');
+            const username = localStorage.getItem('username');
+
+            console.log("Значение user_id из localStorage:", userId);
+            console.log("Значение username из localStorage:", username);
+
+            // Проверка, что значения не пустые и существуют
+            if (userId === null || username === null || userId === "null" || username === "null" || userId === "" || username === "") {
+                console.error("Пользователь не найден в localStorage или значения пустые. Перенаправление на главную страницу.");
+                window.location.href = 'index.html';
+            } else {
+                usernameElement.innerText = username;  // Установка значения username на странице
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem('user_id');
+            localStorage.removeItem('username');
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

@@ -1,43 +1,47 @@
 <?php
-header('Content-Type: application/json'); // Устанавливаем заголовок для JSON
-
-// Включаем вывод ошибок для отладки (только на этапе разработки)
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+ini_set('display_errors', 1);
+header('Content-Type: application/json; charset=UTF-8');
+session_start();
 
-// Подключение к базе данных
-$conn = new mysqli('localhost', 'root', '', 'registration_system');
+$servername = 'sql107.infinityfree.com';
+$username = 'if0_37452426';
+$password = 'oRYQGKwjpbE';
+$database = 'if0_37452426_kokocgroup';
 
-// Проверка подключения
+$conn = new mysqli($servername, $username, $password, $database);
+
 if ($conn->connect_error) {
-    // Если произошла ошибка подключения, возвращаем её в JSON формате
-    echo json_encode(['status' => 'error', 'message' => 'Ошибка подключения: ' . $conn->connect_error]);
-    exit();
+    echo json_encode(['status' => 'error', 'message' => 'Ошибка соединения: ' . $conn->connect_error]);
+    exit;
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Получаем данные из формы
-    $nickname = $conn->real_escape_string($_POST['nickname']);
-    $regemail = $conn->real_escape_string($_POST['regemail']);
-    $regpassword = password_hash($_POST['regpassword'], PASSWORD_DEFAULT); // Хешируем пароль
+$nickname = $_POST['Nickname'] ?? '';
+$email = $_POST['RegEmail'] ?? '';
+$password = $_POST['RegPassword'] ?? '';
 
-    // Проверка уникальности email
-    $checkEmail = $conn->query("SELECT id FROM users WHERE email='$regemail'");
-    if ($checkEmail->num_rows > 0) {
-        // Если email уже зарегистрирован, возвращаем ошибку
-        echo json_encode(['status' => 'error', 'message' => 'Этот email уже зарегистрирован.']);
-    } else {
-        // Вставляем данные нового пользователя в базу данных
-        $sql = "INSERT INTO users (username, email, password) VALUES ('$nickname', '$regemail', '$regpassword')";
-        if ($conn->query($sql) === TRUE) {
-            // Возвращаем успешный ответ, если регистрация прошла успешно
-            echo json_encode(['status' => 'success', 'message' => 'Регистрация прошла успешно!']);
-        } else {
-            // Если произошла ошибка при вставке данных в базу
-            echo json_encode(['status' => 'error', 'message' => 'Ошибка: ' . $conn->error]);
-        }
-    }
+if (empty($nickname) || empty($email) || empty($password)) {
+    echo json_encode(['status' => 'error', 'message' => 'Все поля должны быть заполнены']);
+    exit;
+}
+
+$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+$sql = "INSERT INTO users (nickname, email, password) VALUES ('$nickname', '$email', '$hashed_password')";
+if ($conn->query($sql) === TRUE) {
+    $user_id = $conn->insert_id;
+    $_SESSION['user_id'] = $user_id;
+    $_SESSION['username'] = $nickname;
+
+    echo json_encode([
+        'status' => 'success',
+        'message' => 'Регистрация прошла успешно!',
+        'user_id' => $user_id,
+        'username' => $nickname,
+        'redirect' => 'cabinet.html'
+    ]);
+} else {
+    echo json_encode(['status' => 'error', 'message' => 'Ошибка: ' . $conn->error]);
 }
 
 $conn->close();

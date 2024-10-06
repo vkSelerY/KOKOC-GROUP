@@ -1,34 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width,height=device-heigt,initial-scale=1.0">
-  <title>iMPROVE YOUR MEMORY</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KOKOC GROUP</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-  </div>
-    <header class="header">  
-        <img src="assets/kokocgroup_logo_hori.png" type='logo' alt="">
+    <header class="header">
+        <div class="logo">KOKOC GROUP</div>
         <nav class="navigation">
-          <a href="https://github.com/whoaskedssselery/KOKOCGROUP" class="href">Code</a>
-          <a href="#" class="href"></a>
-          <a href="#" class="href"></a>
-          <a href="#" class="href">More</a>
-          <button class="btnLogin-popup">Login/Sign up</button>
+            <a href="https://github.com/whoaskedssselery/" class="href">Code</a>
+            <a href="#" class="href"></a>
+            <a href="#" class="href"></a>
+            <a href="#" class="href">More</a>
+            <span id="user-display">
+                <button id="login-btn" class="btnLogin-popup">Login/Sign up</button>
+            </span>
         </nav>
-      </header>
-      
+    </header>
 
-
-
-<div class="wrapper">
+    <div class="wrapper">
         <span class="close-icon"><ion-icon name="close"></ion-icon></span>
-        
+
         <div class="form-box Login">
             <h2>Login</h2>
             <form id="loginForm">
@@ -47,7 +46,7 @@
             </form>
             <div id="loginResponse"></div> <!-- Для вывода ответа от сервера -->
         </div>
-        
+
         <div class="form-box Register">
             <h2>Sign up</h2>
             <form id="registrationForm">
@@ -71,20 +70,11 @@
             </form>
             <div id="registerResponse"></div> <!-- Для вывода ответа от сервера -->
         </div>
-        
+    </div>
 
-
-
-
-<script src="script.js"></script>
-<script src="reg.js"></script>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
-
-  
-
-
+    <script src="script.js" defer></script>
+    <script src="reg.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
-
 </html>

@@ -44,6 +44,11 @@ header{
   justify-content: space-between;
 }
 
+.logo{
+  font-weight: 600;
+  font-size: 22px;
+}
+
 .navigation .btnLogin-popup{
   width: 140px;
   height: 40px;
