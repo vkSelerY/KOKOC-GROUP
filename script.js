@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Код для работы с формами регистрации и входа
     const wrapper = document.querySelector(".wrapper");
+    const wrapper1 = document.querySelector(".wrapper1")
     const loginLink = document.querySelector(".login-link");
     const registerLink = document.querySelector(".register-link");
     const btnPopup = document.querySelector(".btnLogin-popup");
@@ -15,12 +16,28 @@ document.addEventListener('DOMContentLoaded', function () {
         wrapper.classList.remove('active');
     });
 
+    registerLink.addEventListener('click', () => {
+        wrapper1.classList.add('active');
+    });
+
+    loginLink.addEventListener('click', () => {
+        wrapper1.classList.remove('active');
+    });
+
     btnPopup.addEventListener('click', () => {
         wrapper.classList.add('active-popup');
     });
 
     CloseIcon.addEventListener('click', () => {
         wrapper.classList.remove('active-popup');
+    });
+
+    btnPopup.addEventListener('click', () => {
+        wrapper1.classList.add('active-popup');
+    });
+
+    CloseIcon.addEventListener('click', () => {
+        wrapper1.classList.remove('active-popup');
     });
 
     // Логика для авторизации, регистрации и управления сессией

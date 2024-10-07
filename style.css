@@ -58,9 +58,8 @@ body {
 }
 
 
-.wrapper{
-  position: sticky;
-  top: 27%;
+.wrapper {
+  position: sticky; 
   left: 35%;
   width: 377px;
   height: 440px;
@@ -77,7 +76,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  /* margin-top: 20%; */
+  margin-top: 230px; 
 }
 
 .wrapper.active-popup{
@@ -399,4 +398,85 @@ transform: translateX(0);
   .player-card img {
     height: 280px;
   }
+}
+
+.wrapper1{
+  position: sticky;
+  top: 29%;
+  left: 35%;
+  width: 377px;
+  height: 440px;
+  background: transparent;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  transform: scale(0);
+  transition: all .5s ease, all .2s ease;
+  z-index: 999999;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  /* margin-top: 20%; */
+}
+
+.wrapper1.active-popup{
+  transform: scale(1);
+}
+
+.wrapper1.active{
+  height: 480px;
+}
+
+.wrapper1 .form-box{
+  width: 100%;
+  padding: 50px;
+}
+
+.wrapper1 .form-box.Login{
+  transition: all .18s ease;
+  transform: translateX(0);
+}
+
+.wrapper1.active .form-box.Login{
+  transition: none;
+  transform: translateX(-400px);
+}
+
+.wrapper1 .form-box.Register{
+  position: absolute;
+  transition: none;
+  transform: translateX(400px);
+}
+
+.wrapper1.active .form-box.Register{
+transition: all .18s ease;
+transform: translateX(0);
+}
+
+.wrapper1 .close-icon{
+  position:absolute;
+  top: 0%;
+  right: 0%;
+  width: 45px;
+  height: 45px;
+  background: #162938;
+  font-size: 2em;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+  cursor: pointer;
+  z-index: 1;
+  top: -2px;
+  right: -2.6px;
+}
+
+.wrapper1 .form-box.Register{
+  position: absolute;
+  transform: translateX(400px);
 }
