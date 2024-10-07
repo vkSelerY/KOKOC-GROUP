@@ -326,6 +326,8 @@ transform: translateX(0);
 
 .player-card {
   width: 220px;
+  height: 300px;
+  width: 300px;
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 20px;
@@ -345,6 +347,10 @@ transform: translateX(0);
   height: auto;
   border-radius: 10px;
   margin-bottom: 15px;
+}
+
+.player-card img {
+  height: 250px;
 }
 
 .player-card h3 {
