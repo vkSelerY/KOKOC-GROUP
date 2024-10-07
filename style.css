@@ -163,6 +163,7 @@ transform: translateX(0);
   height: 50px;
   border-bottom: 2px solid #162938;
   margin: 30px 0;
+  margin-top: 30px;
 }
 
 .input-box label{
@@ -331,12 +332,25 @@ transform: translateX(0);
   transform: translateX(400px);
 }
 
+.team-section {
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.section-title {
+  font-size: 24px;
+  text-align: center;
+  color: #d32f2f;
+  text-transform: uppercase;
+  padding: 10px;
+  margin: 30px 0 20px;
+}
+
 .team-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 20px;
 }
 
 .player-card {
@@ -359,44 +373,28 @@ transform: translateX(0);
 }
 
 .player-card h3 {
-  padding: 15px;
-  background-color: #333;
+  font-size: 18px;
+  background-color: #0d47a1;
   color: #fff;
   text-align: center;
+  padding: 10px;
   margin: 0;
 }
 
 .player-card p {
-  padding: 10px;
-  background-color: #f8f8f8;
-  color: #555;
   text-align: center;
+  padding: 10px;
+  background-color: #e3f2fd;
   margin: 0;
 }
 
-/* Стили для заголовков */
-/* h2 {
-  width: 100%;
-  text-align: center;
-  font-size: 24px;
-  color: #333;
-  padding: 20px;
-  background-color: #fff;
-  margin-bottom: 10px;
-} */
-
-/* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
-  .team-container {
-    gap: 15px;
-  }
-
   .player-card {
-    width: 200px;
+      width: 200px;
   }
 
   .player-card img {
-    height: 280px;
+      height: 280px;
   }
 }
 
