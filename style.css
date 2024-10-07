@@ -335,13 +335,18 @@ transform: translateX(0);
 }
 
 .player-card {
-  width: 200px;
+  height: 300px;
+  width: 300px;
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   background-color: #fff;
+}
+
+.player-card img {
+  height: 250px;
 }
 
 .player-card h3 {
