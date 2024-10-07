@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Состав Команды</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="toggle.css">
 
     <noscript><link rel="stylesheet" href="style.css"></noscript>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -71,16 +72,31 @@
             <div id="registerResponse"></div> <!-- Для вывода ответа от сервера -->
         </div>
     </div>
+    <div class="team-wrapper">
+        <div class="sidebar-info hidden">
+            <span class="toggle-info"><ion-icon name="chevron-back"></ion-icon></span>
+            <div class="player-info">
+                <h3>Игрок</h3>
+                <p><strong>Родился:</strong> <span id="player-birth"></span></p>
+                <p><strong>Гражданство:</strong> <span id="player-nationality"></span></p>
+                <p><strong>Рост:</strong> <span id="player-height"></span> см</p>
+                <p><strong>Вес:</strong> <span id="player-weight"></span> кг</p>
+            </div>
+        </div>
 
     <h2>Вратари</h2>
     <div class="team-container" id="goalkeepers">
         <div class="player-card">
             <img src="assets/zblbin.jpg" alt="">
             <h3>Зыбин Александр </h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/komyagin.jpg" alt="">
             <h3>Комягин Михаил </h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
     </div>
 
@@ -89,34 +105,50 @@
         <div class="player-card">
             <img src="assets/azemblovskii.jpg" alt="">
             <h3>Азембловский Никита</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/aliseevich.jpg" alt="">
             <h3>Алисеевич Георгий</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/vlasov.jpg" alt="">
             <h3>Власов Виктор</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/iminzhanov.jpg" alt="">
             <h3>Иминжанов Анвар</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/maryashin.jpg" alt="">
             <h3>Марьяшин Павел</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/pogrebnyakN.jpg" alt="">
             <h3>Погребняк Николай</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/rblkov.jpg" alt="">
             <h3>Рыков Владимир</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/tereshenko.jpg" alt="">
             <h3>Терещенко Павел</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
     </div>
 
@@ -125,46 +157,68 @@
         <div class="player-card">
             <img src="assets/gusev.jpg" alt="">
             <h3>Гусев Константин</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/zhezha.jpeg" alt="">
             <h3>Жежа Павел</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/karev.jpg" alt="">
             <h3>Карев Александр</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/kudiyarov.jpg" alt="">
             <h3>Кудьяров Владислав</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/komyazhko.jpg" alt="">
             <h3>Комяжко Кирилл</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/lidinev.jpg" alt="">
             <h3>Лидинёв Олег</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/mareev.jpg" alt="">
             <h3>Мареев Юрий</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/pogrebnyakA.jpg" alt="">
             <h3>Погребняк Артем</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/sutorminK.jpeg" alt="">
             <h3>Сутормин Константин</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/terekhov.jpg" alt="">
             <h3>Терехов Антон</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/cherkashin.jpg" alt="">
             <h3>Черкашин Артем</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
     </div>
 
@@ -173,18 +227,26 @@
         <div class="player-card">
             <img src="assets/ledenev.jpg" alt="">
             <h3>Леденёв Роман</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/pogrebnyakK.jpg" alt="">
             <h3>Погребняк Кирилл</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/pogrebnyakP.jpg" alt="">
             <h3>Погребняк Павел</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
         <div class="player-card">
             <img src="assets/sutorminA.jpeg" alt="">
             <h3>Сутормин Алексей</h3>
+            <div class="player-number">1</div>
+            <img src="assets/flag_russia.png" class="player-flag" alt="Флаг">
         </div>
 
     </div>
@@ -192,8 +254,20 @@
     <script src="script.js" defer></script>
     <script src="transfer.js" defer></script>
     <script src="reg.js" defer></script>
+    <script src="toggle.js" defer></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        function showPlayerInfo(name, nation, height, weight) {
+            document.getElementById("playerName").innerText = name;
+            document.getElementById("playerHeight").innerText = "Рост: " + height + " см";
+            document.getElementById("playerWeight").innerText = "Вес: " + weight + " кг";
+
+            const sidebar = document.getElementById("playerInfoSidebar");
+            sidebar.classList.add("show");
+        }
+    </script>
+
 
 </body>
 

@@ -332,71 +332,110 @@ transform: translateX(0);
   transform: translateX(400px);
 }
 
-.team-section {
+.main-content {
+  display: flex;
+  position: relative;
+  width: 900px;  /* Изменено для более компактного представления */
+  margin: 30px auto;
   padding: 20px;
-  margin-top: 80px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.section-title {
-  font-size: 24px;
-  text-align: center;
-  color: #d32f2f;
-  text-transform: uppercase;
-  padding: 10px;
-  margin: 30px 0 20px;
+.sticky-sidebar {
+  position: sticky;
+  top: 20px;  /* Сделан меньше отступ сверху */
+  width: 220px;  /* Уменьшен для более компактного вида */
+  height: auto;
+  background: #f9f9f9;
+  border-right: 2px solid #ddd;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
+  display: none;  /* Скрываем по умолчанию */
+}
+
+.sticky-sidebar.show {
+  display: block;  /* Отображаем, когда открыта */
+}
+
+.toggle-tab {
+  position: absolute;
+  top: 20px;
+  left: 100%;
+  background: #333;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Карточки игроков */
+.players-section {
+  width: calc(100% - 250px);
+  padding-left: 30px;
 }
 
 .team-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));  /* Используем сетку для лучшего выравнивания */
   gap: 20px;
 }
 
 .player-card {
-  width: 250px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease;
+  width: 130px;
+  height: 180px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  position: relative;
 }
 
 .player-card:hover {
-  transform: translateY(-10px);
+  transform: scale(1.05);
 }
 
 .player-card img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-top: 10px;
 }
 
-.player-card h3 {
-  font-size: 18px;
-  background-color: #0d47a1;
+.player-number {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: #ff0000;
   color: #fff;
-  text-align: center;
-  padding: 10px;
-  margin: 0;
+  font-weight: bold;
+  padding: 2px 6px;
+  border-radius: 5px;
 }
 
-.player-card p {
-  text-align: center;
-  padding: 10px;
-  background-color: #e3f2fd;
-  margin: 0;
+.player-name {
+  font-size: 14px;
+  margin-top: 10px;
 }
 
-@media (max-width: 768px) {
-  .player-card {
-      width: 200px;
-  }
-
-  .player-card img {
-      height: 280px;
-  }
+/* Добавление флага игрока */
+.player-card .player-flag {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 15px;
+  border-radius: 3px;
 }
+
+/* Уменьшение отступа сверху */
 
 .wrapper1{
   position: sticky;
