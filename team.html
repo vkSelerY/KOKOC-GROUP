@@ -2,9 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KOKOC GROUP Team</title>
+    <title>Состав Команды</title>
     <link rel="stylesheet" href="style.css">
+
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="header">
@@ -19,6 +24,7 @@
             </span>
         </nav>
     </header>
+
     <div class="wrapper">
         <span class="close-icon"><ion-icon name="close"></ion-icon></span>
 
@@ -65,8 +71,6 @@
             <div id="registerResponse"></div> <!-- Для вывода ответа от сервера -->
         </div>
     </div>
-
-    <h1>Состав KOKOC GROUP</h1>
 
     <h2>Вратари</h2>
     <div class="team-container" id="goalkeepers">
@@ -171,10 +175,6 @@
             <h3>Леденёв Роман</h3>
         </div>
         <div class="player-card">
-            <img src="assets/ledenev.jpg" alt="">
-            <h3>Леденёв Роман</h3>
-        </div>
-        <div class="player-card">
             <img src="assets/pogrebnyakK.jpg" alt="">
             <h3>Погребняк Кирилл</h3>
         </div>
@@ -189,6 +189,15 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <script src="transfer.js" defer></script>
+    <script src="reg.js" defer></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
+
+
+    
+
 </html>
