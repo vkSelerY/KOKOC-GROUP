@@ -1,41 +1,57 @@
-const wrapper = document.querySelector(".wrapper")
-const loginLink = document.querySelector(".login-link")
-const registerLink = document.querySelector(".register-link")
-const btnPopup = document.querySelector(".btnLogin-popup")
-const CloseIcon = document.querySelector(".close-icon")
-const Closehelper = document.querySelector(".closeMenu")
-registerLink.addEventListener('click', ()=> {
-  wrapper.classList.add('active')
-});
-loginLink.addEventListener('click', ()=> {
-  wrapper.classList.remove('active')
-});
-btnPopup.addEventListener('click', ()=> {
-  wrapper.classList.add('active-popup')
-});
-CloseIcon.addEventListener('click', ()=> {
-  wrapper.classList.remove('active-popup')
-});
-
-
-
 document.addEventListener('DOMContentLoaded', function () {
+    // Код для работы с формами регистрации и входа
+    const wrapper = document.querySelector(".wrapper");
+    const loginLink = document.querySelector(".login-link");
+    const registerLink = document.querySelector(".register-link");
+    const btnPopup = document.querySelector(".btnLogin-popup");
+    const CloseIcon = document.querySelector(".close-icon");
+    const Closehelper = document.querySelector(".closeMenu");
+
+    registerLink.addEventListener('click', () => {
+        wrapper.classList.add('active');
+    });
+
+    loginLink.addEventListener('click', () => {
+        wrapper.classList.remove('active');
+    });
+
+    btnPopup.addEventListener('click', () => {
+        wrapper.classList.add('active-popup');
+    });
+
+    CloseIcon.addEventListener('click', () => {
+        wrapper.classList.remove('active-popup');
+    });
+
+    // Логика для авторизации, регистрации и управления сессией
     const userId = localStorage.getItem('user_id');
     const username = localStorage.getItem('username');
 
-    console.log("Чтение значений из localStorage:");
-    console.log("user_id:", userId);
-    console.log("username:", username);
-
     if (userId && username) {
-        // Обновление кнопки на имя пользователя и добавление ссылки на личный кабинет
         const userDisplay = document.getElementById('user-display');
         userDisplay.innerHTML = `
-            <span class="user-link">Welcome, ${username}</span>
+            <a href="cabinet.html" class="user-link">Welcome, ${username}</a>
             <button onclick="logout()" class="btnLogout">Logout</button>`;
     }
 
-    document.getElementById('loginForm').addEventListener('submit', function (e) {
+    // Переход на страницу "Состав"
+    // const teamLink = document.getElementById('team-link');
+    // if (teamLink) {
+    //     teamLink.addEventListener('click', function (e) {
+    //         e.preventDefault();
+    //         window.location.href = 'team.html';
+    //     });
+    // }
+
+    // // Логика возврата на главную страницу при нажатии на логотип
+    // const logotype = document.getElementById('logotype');
+    // if (logotype) {
+    //     logotype.addEventListener('click', function () {
+    //         window.location.href = 'index.html';
+    //     });
+    // }
+
+    document.getElementById('loginForm')?.addEventListener('submit', function (e) {
         e.preventDefault();
         const formData = new FormData(this);
 
@@ -45,16 +61,16 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => response.json())
         .then(data => {
-            console.log("Ответ сервера при входе:", data);
             if (data.status === 'success') {
                 localStorage.setItem('user_id', data.user_id);
                 localStorage.setItem('username', data.username);
 
-                // Обновляем отображение на главной странице без перехода на другую страницу
                 const userDisplay = document.getElementById('user-display');
                 userDisplay.innerHTML = `
-                    <span class="user-link">Welcome, ${data.username}</span>
+                    <a href="cabinet.html" class="user-link">Welcome, ${data.username}</a>
                     <button onclick="logout()" class="btnLogout">Logout</button>`;
+
+                document.getElementById('loginResponse').innerText = "Добро пожаловать, " + data.username;
             } else {
                 document.getElementById('loginResponse').innerText = data.message;
             }
@@ -62,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .catch(error => console.error('Ошибка при входе:', error));
     });
 
-    document.getElementById('registrationForm').addEventListener('submit', function (e) {
+    document.getElementById('registrationForm')?.addEventListener('submit', function (e) {
         e.preventDefault();
         const formData = new FormData(this);
 
@@ -72,16 +88,16 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(response => response.json())
         .then(data => {
-            console.log("Ответ сервера при регистрации:", data);
             if (data.status === 'success') {
                 localStorage.setItem('user_id', data.user_id);
                 localStorage.setItem('username', data.username);
 
-                // Обновляем отображение на главной странице без перехода на другую страницу
                 const userDisplay = document.getElementById('user-display');
                 userDisplay.innerHTML = `
-                    <span class="user-link">Welcome, ${data.username}</span>
+                    <a href="cabinet.html" class="user-link">Welcome, ${data.username}</a>
                     <button onclick="logout()" class="btnLogout">Logout</button>`;
+
+                document.getElementById('registerResponse').innerText = "Добро пожаловать, " + data.username;
             } else {
                 document.getElementById('registerResponse').innerText = data.message;
             }
@@ -90,8 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Функция для выхода из аккаунта
 function logout() {
     localStorage.removeItem('user_id');
     localStorage.removeItem('username');
-    location.reload();  // Обновление страницы после выхода
+    location.reload();
 }

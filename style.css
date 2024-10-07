@@ -27,7 +27,7 @@ header{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 999;
+  z-index: 1000;
   background: #ffffff;
 }
 
@@ -44,10 +44,15 @@ header{
   justify-content: space-between;
 }
 
-.logo{
+.logo a{
   font-weight: 600;
   font-size: 22px;
+  cursor: pointer;
+  z-index: 1000;
+  text-decoration: none;
+  color: black;
 }
+
 
 .navigation .btnLogin-popup{
   width: 140px;
@@ -321,3 +326,29 @@ transform: translateX(0);
   transform: translateX(400px);
 }
 
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.player-card {
+  width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fff;
+}
+
+.player-card h3 {
+  margin: 10px 0;
+}
+
+.player-card p {
+  font-size: 0.9em;
+  color: #555;
+}
