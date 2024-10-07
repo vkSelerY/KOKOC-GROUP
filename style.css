@@ -6,53 +6,43 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-position: cover ;
-  background-position: center;
-  background-attachment: fixed;
-
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
-
-header{
-  position: fixed;
-  top: 0%;
-  right: 0%;
-  width: 100%;
-  padding: 20px 100px;
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
-  background: #ffffff;
+  padding: 20px;
+  color: #fff;
 }
 
-
-.navigation a{
-  position: relative;
-  font-size: 1.1em;
-  color: black;
+.logo {
+  font-size: 24px;
+  font-weight: bold;
   cursor: pointer;
-  text-decoration: none;
-  font-weight: 500;
-  margin-left: 50px;
-  margin-right: 35px;
-  justify-content: space-between;
 }
 
-.logo a{
-  font-weight: 600;
-  font-size: 22px;
-  cursor: pointer;
-  z-index: 1000;
+.logo a {
   text-decoration: none;
   color: black;
 }
 
+.navigation a {
+  text-decoration: none;
+  color: black;
+  margin: 0 15px;
+}
+
+h1, h2 {
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
+}
 
 .navigation .btnLogin-popup{
   width: 140px;
@@ -330,25 +320,87 @@ transform: translateX(0);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 30px;
   padding: 20px;
 }
 
 .player-card {
-  width: 200px;
+  width: 220px;
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.player-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.player-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 .player-card h3 {
   margin: 10px 0;
+  font-size: 18px;
+  color: #333;
 }
 
 .player-card p {
-  font-size: 0.9em;
-  color: #555;
+  font-size: 14px;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .team-container {
+      gap: 15px;
+  }
+
+  .player-card {
+      width: 180px;
+      padding: 15px;
+  }
+
+  .player-card h3 {
+      font-size: 16px;
+  }
+
+  .player-card p {
+      font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+      flex-direction: column;
+      padding: 10px;
+  }
+
+  .logo {
+      margin-bottom: 10px;
+  }
+
+  .team-container {
+      padding: 10px;
+  }
+
+  .player-card {
+      width: 150px;
+      padding: 10px;
+  }
+
+  .player-card h3 {
+      font-size: 14px;
+  }
+
+  .player-card p {
+      font-size: 11px;
+  }
 }
